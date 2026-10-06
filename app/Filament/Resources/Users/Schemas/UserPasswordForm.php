@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\Users\Schemas;
 
-use Filament\Forms\Components\TextInput;
+use App\Filament\Schemas\Components\UserPasswordInput;
 use Filament\Schemas\Schema;
 
 class UserPasswordForm
@@ -11,9 +11,7 @@ class UserPasswordForm
     {
         return $schema
             ->components([
-                TextInput::make('password')
-                    ->password()
-                    ->required(),
+                UserPasswordInput::make(),
             ]);
     }
 }

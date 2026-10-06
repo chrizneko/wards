@@ -2,8 +2,10 @@
 
 namespace App\Filament\Resources\Users\Schemas;
 
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
+use App\Filament\Schemas\Components\UserEmailInput;
+use App\Filament\Schemas\Components\UserNameInput;
+use App\Filament\Schemas\Components\UserPasswordInput;
+use App\Filament\Schemas\Components\UserRolesInput;
 use Filament\Schemas\Schema;
 
 class UserNewForm
@@ -12,20 +14,10 @@ class UserNewForm
     {
         return $schema
             ->components([
-                TextInput::make('name')
-                    ->required(),
-                TextInput::make('email')
-                    ->label('Email address')
-                    ->email()
-                    ->required(),
-                TextInput::make('password')
-                    ->password()
-                    ->required(),
-                Select::make('roles')
-                    ->relationship('roles', 'name')
-                    ->multiple()
-                    ->preload()
-                    ->searchable(),
+                UserNameInput::make(),
+                UserEmailInput::make(),
+                UserPasswordInput::make(),
+                UserRolesInput::make(),
             ]);
     }
 }

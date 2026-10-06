@@ -11,6 +11,7 @@ use Filament\Actions\ViewAction;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use STS\FilamentImpersonate\Actions\Impersonate;
 
 class UsersTable
 {
@@ -34,6 +35,8 @@ class UsersTable
                 Action::make('edit_password')
                     ->icon(Heroicon::Key)
                     ->url(fn (User $record): string => route('filament.admin.resources.users.editPassword', $record)),
+                Impersonate::make()
+                    ->color('gray'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
