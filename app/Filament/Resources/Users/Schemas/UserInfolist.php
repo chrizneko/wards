@@ -22,6 +22,9 @@ class UserInfolist
                     ->dateTime()
                     ->label('Updated At (UTC)')
                     ->placeholder('-'),
+                TextEntry::make('roles.name')
+                    ->label('Roles')
+                    ->placeholder('-'),
             ]);
     }
 }
