@@ -12,6 +12,8 @@ class UserInfolist
         return $schema
             ->components([
                 TextEntry::make('name'),
+                TextEntry::make('group.name')
+                    ->label('Group'),
                 TextEntry::make('email')
                     ->label('Email address'),
                 TextEntry::make('created_at')

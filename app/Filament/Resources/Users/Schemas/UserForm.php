@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Users\Schemas;
 
 use App\Filament\Schemas\Components\UserEmailInput;
+use App\Filament\Schemas\Components\UserGroupInput;
 use App\Filament\Schemas\Components\UserNameInput;
 use App\Filament\Schemas\Components\UserRolesInput;
 use Filament\Schemas\Schema;
@@ -14,6 +15,7 @@ class UserForm
         return $schema
             ->components([
                 UserNameInput::make(),
+                UserGroupInput::make(),
                 UserEmailInput::make(),
                 UserRolesInput::make(),
             ]);
